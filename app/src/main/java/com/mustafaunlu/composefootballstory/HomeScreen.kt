@@ -33,7 +33,7 @@ fun HomeScreen() {
         Column(
             ) {
             WelcomeSection("Mustafa")
-            LeaguesSection(listOf("Premier","La Liga","Super Lig"," Ligue 1"))
+            LeaguesSection(listOf("Premier","La Liga","Super Lig"," Ligue 1","Serie A"))
         }
     }
     
