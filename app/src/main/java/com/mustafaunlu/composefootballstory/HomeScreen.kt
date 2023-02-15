@@ -1,5 +1,6 @@
 package com.mustafaunlu.composefootballstory
 
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
@@ -15,6 +16,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
@@ -30,10 +32,10 @@ fun HomeScreen() {
     Box(modifier = Modifier
         .fillMaxSize()
         .background(DeepGreen)) {
-        Column(
-            ) {
+        Column {
             WelcomeSection("Mustafa")
             LeaguesSection(listOf("Premier","La Liga","Super Lig"," Ligue 1","Serie A"))
+            HighlightScreen()
         }
     }
     
@@ -76,10 +78,12 @@ fun LeaguesSection( leagueList :List<String>) {
     LazyRow(){
         items(leagueList.size){
             Box(contentAlignment = Alignment.Center,
-                modifier = Modifier.padding(start = 15.dp, top = 15.dp, bottom = 15.dp)
+                modifier = Modifier
+                    .padding(start = 15.dp, top = 15.dp, bottom = 15.dp)
                     .clickable {
-                               selectedChipIndex=it
-                    }.clip(RoundedCornerShape(10.dp))
+                        selectedChipIndex = it
+                    }
+                    .clip(RoundedCornerShape(10.dp))
                     .background(
                         if (selectedChipIndex == it) ButtonGreen
                         else Color.DarkGray
@@ -93,8 +97,23 @@ fun LeaguesSection( leagueList :List<String>) {
         }
     }
 
+}
 
-    
+@Composable
+fun HighlightScreen(
+){
+
+    Box(modifier = Modifier
+        .padding(10.dp)
+        .fillMaxWidth()
+        .height(200.dp)
+        .clip(RoundedCornerShape(10.dp))
+        .background(Color.Blue)) {
+
+        Image(painter = painterResource(id = R.drawable.manu), contentDescription = "highlights", contentScale = ContentScale.FillWidth, modifier = Modifier.fillMaxSize())
+
+    }
+
 }
 
 
