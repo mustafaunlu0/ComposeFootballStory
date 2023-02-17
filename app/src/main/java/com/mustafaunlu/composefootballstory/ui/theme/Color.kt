@@ -4,8 +4,8 @@ import androidx.compose.ui.graphics.Color
 
 
 val TextWhite = Color(0xffeeeeee)
-val DeepGreen = Color(0xFF336B0E)
-val ButtonGreen = Color(0xFFA2B390)
+val DeepGreen = Color(0xFF92073A)
+val ButtonGreen = Color(0xFF083E6D)
 val DarkerButtonBlue = Color(0xff566894)
 val LightRed = Color(0xfffc879a)
 val AquaBlue = Color(0xff9aa5c4)
